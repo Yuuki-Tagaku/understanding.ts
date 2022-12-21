@@ -1,11 +1,17 @@
-console.log('ここにコードを追加します!!!!!');
-function add(n1, n2) {
-    if (typeof n1 !== 'number' || typeof n2 !== 'number') {
-        throw new Error('入力値が正しくありません');
+function add(n1, n2, showResuit, phrase) {
+    // if (typeof n1 !== 'number' || typeof n2 !== 'number') {
+    //     throw new Error('入力値が正しくありません')
+    // }
+    var result = n1 + n2;
+    if (showResuit) {
+        console.log(phrase + result);
     }
-    return n1 + n2;
+    else {
+        return result;
+    }
 }
-var number1 = '5';
+var number1 = 5;
 var number2 = 2.8;
-var result = add(number1, number2);
-console.log(result);
+var printResult = true;
+var resultPhrase = 'Result: ';
+add(number1, number2, printResult, resultPhrase);
