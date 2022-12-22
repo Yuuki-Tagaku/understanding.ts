@@ -4,12 +4,12 @@ type ConversionDescriptor = 'as-number' | 'as-text'
 function combine(
   input1: number | string,
   input2: number | string,
-  resultComvertion: ConversionDescriptor,
+  resultComvertion: ConversionDescriptor
 ) {
   let result
   if (
-    (typeof input1 === "number" && typeof input2 === "number") ||
-    resultComvertion === "as-number"
+    (typeof input1 === 'number' && typeof input2 === 'number') ||
+    resultComvertion === 'as-number'
   ) {
     result = +input1 + +input2
   } else {
@@ -22,11 +22,11 @@ function combine(
   //   return result.toString()
 }
 
-const combinedAges = combine(30, 26, "as-number")
+const combinedAges = combine(30, 26, 'as-number')
 console.log(combinedAges)
 
-const combinedStringAges = combine("30", "26", "as-number")
+const combinedStringAges = combine('30', '26', 'as-number')
 console.log(combinedStringAges)
 
-const combinedNames = combine("Max", "Anna", "as-text")
+const combinedNames = combine('Max', 'Anna', 'as-text')
 console.log(combinedNames)
