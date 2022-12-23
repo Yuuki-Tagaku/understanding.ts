@@ -25,8 +25,16 @@ if (button) {
   })
 }
 
-// function add(a: number, b: number) {
-//   let result
-//   result = a + b
-//   return result
-// }
+const hobbies = ['Sport', 'Cooking']
+const activeHobbies = ['Hiking', ...hobbies]
+
+activeHobbies.push(...activeHobbies)
+
+const person = {
+  name: 'Max',
+  age: 30,
+}
+
+const copiedPerson = {
+  ...person,
+}
