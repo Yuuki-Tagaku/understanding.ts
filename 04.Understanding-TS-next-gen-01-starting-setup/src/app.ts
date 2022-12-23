@@ -6,7 +6,8 @@ age = 29
 
 // varは使用しない　グローバルスコープとなるため
 
-const add = (a: number, b: number) => {
+// デフォルト値は引数の2番目にしか設定できない。ここでいうと「b」の話
+const add = (a: number, b: number = 1) => {
   return a + b
 }
 
@@ -14,7 +15,7 @@ const printOutput: (output: string | number) => void = (output) => {
   console.log(output)
 }
 
-printOutput(add(2, 5))
+printOutput(add(2))
 
 const button = document.querySelector('button')
 
