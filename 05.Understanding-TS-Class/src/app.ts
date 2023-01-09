@@ -1,10 +1,15 @@
 class Department {
+  static fiscalYear = 2020
   // private id: string
   // name: string
   // pivateはそのクラスの中のメソッドからしかアクセスができないもの
   // private employees: string[] = []
   // protectedはprivateのように外部からのアクセスはできないが、継承したサブクラスからはアクセスできるようにする修飾子のことを言う
   protected employees: string[] = []
+
+  static createEmployee(name: string) {
+    return { name: name }
+  }
 
   constructor(private readonly id: string, public name: string) {
     // this.id = id
@@ -72,6 +77,9 @@ class AccountingDepartment extends Department {
     this.employees.push(name)
   }
 }
+
+const employee1 = Department.createEmployee('Max')
+console.log(employee1, Department.fiscalYear)
 
 const it = new ITDepartment('d1', ['Max'])
 
