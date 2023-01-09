@@ -2,7 +2,9 @@ class Department {
   // private id: string
   // name: string
   // pivateはそのクラスの中のメソッドからしかアクセスができないもの
-  private employees: string[] = []
+  // private employees: string[] = []
+  // protectedはprivateのように外部からのアクセスはできないが、継承したサブクラスからはアクセスできるようにする修飾子のことを言う
+  protected employees: string[] = []
 
   constructor(private readonly id: string, public name: string) {
     // this.id = id
@@ -44,6 +46,13 @@ class AccountingDepartment extends Department {
   printReports() {
     console.log(this.reports)
   }
+
+  addEmployee(name: string) {
+    if (name === 'Max') {
+      return
+    }
+    this.employees.push(name)
+  }
 }
 
 const it = new ITDepartment('d1', ['Max'])
@@ -59,6 +68,11 @@ console.log(it)
 const accounting = new AccountingDepartment('d2', [])
 accounting.addReports('Somthing')
 accounting.printReports()
+
+accounting.addEmployee('Max')
+accounting.addEmployee('Manu')
+
+accounting.printEmployeeInfomation()
 
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe }
 
